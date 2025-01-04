@@ -6,15 +6,17 @@ const toggleNav = () => {
 let startY = 0;
 let currentY = 0;
 
-document.addEventListener("touchstart", (e) => {
+const navElement = document.querySelector("#nav");
+
+navElement.addEventListener("touchstart", (e) => {
   startY = e.touches[0].clientY;
 });
 
-document.addEventListener("touchmove", (e) => {
+navElement.addEventListener("touchmove", (e) => {
   currentY = e.touches[0].clientY;
 });
 
-document.addEventListener("touchend", () => {
+navElement.addEventListener("touchend", () => {
   const diffY = currentY - startY;
   const threshold = 50; // minimum swipe distance in pixels
 
